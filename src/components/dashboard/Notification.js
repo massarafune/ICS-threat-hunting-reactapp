@@ -11,7 +11,7 @@ const options = {
     clientId: 'sid'
 };
 
-const client = mqtt.connect('mqtt://test.qut.edu.au:8081');
+const client = mqtt.connect('mqtt://test.monsquitto.org:8081');
 
 client.subscribe('ics');
 
@@ -40,7 +40,7 @@ const Notification = (props) => {
             autoHideDuration={5000}
             onClose={handleOpen}
             message='Attack Detected: Click to reload the table'
-            // onClick={()=>window.location.reload(false)}
+            onClick={()=>window.location.reload(false)}
             action={
                 <React.Fragment>
                     <IconButton size="small" aria-label="close" color="inherit" onClick={handleOpen}>
