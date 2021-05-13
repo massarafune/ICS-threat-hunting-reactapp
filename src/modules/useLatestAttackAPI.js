@@ -3,9 +3,8 @@ import {useEffect, useState} from "react";
 import textFieldClasses from "@material-ui/core/TextField/textFieldClasses";
 import {v4 as uuid} from "uuid";
 
-const hostname = window && window.location && window.location.hostname;
 
-const host = `http://${hostname}:9200/`;
+const host = 'http://localhost:9200/';
 const index = 'attack';
 
 const attacks = [
@@ -49,18 +48,18 @@ const attacks = [
 
 const getLatestAttackAPI = () => {
     const url = `${host}${index}/_search`
-    // return axios.get(url).then((res) => {
-    //     return {
-    //      'id': res.data.id,
-    //      'timestamp': res.data.timestamp,
-    //      'SrcIP': res.data.srcIP,
-    //      'DestIP': res.data.destIP,
-    //      'Tactics': res.data.tactics,
-    //      'Technique': res.data.technique,
-    //      'log': res.data.filename
-    //     };
-    // })
-    return attacks;
+    return axios.get(url).then((res) => {
+        return {
+         'id': res.data.id,
+         'timestamp': res.data.timestamp,
+         'SrcIP': res.data.srcIP,
+         'DestIP': res.data.destIP,
+         'Tactics': res.data.tactics,
+         'Technique': res.data.technique,
+         'log': res.data.filename
+        };
+    })
+    // return attacks;
 }
 
 
@@ -71,13 +70,13 @@ export default function useLatestAttackAPI(){
 
     useEffect(()=> {
         setLoading(true);
-        // getElasticTTPsAPI(tac,tech).then((list)=>{
-        //     let result = JSON.parse(list.data);
-        //     setList(result);
-        //     setLoading(false);
-        // }).catch((e)=>setErr(e))
-        setLoading(false)
-        setList(getLatestAttackAPI());
+        getLatestAttackAPI(tac,tech).then((list)=>{
+            let result = JSON.parse(list.data);
+            setList(result);
+            setLoading(false);
+        }).catch((e)=>setErr(e))
+        // setLoading(false)
+        // setList(getLatestAttackAPI());
     },[]);
     return {
         list,
