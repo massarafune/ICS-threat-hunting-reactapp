@@ -1,7 +1,9 @@
 import axios from "axios";
 import {useEffect, useState} from "react";
 
-const host = 'http://localhost:9200/';
+const hostname = window && window.location && window.location.hostname;
+
+const host = `http://${hostname}:9200/`;
 const index = 'mitre';
 const tactics = {
     'Initial Access': 'initial-access-ics',

@@ -3,7 +3,9 @@ import {useEffect, useState} from "react";
 import textFieldClasses from "@material-ui/core/TextField/textFieldClasses";
 import {v4 as uuid} from "uuid";
 
-const host = 'http://localhost:9200/';
+const hostname = window && window.location && window.location.hostname;
+
+const host = `http://${hostname}:9200/`;
 const index = 'attack';
 
 const attacks = [
