@@ -1,20 +1,14 @@
 import { Helmet } from 'react-helmet';
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import {
   Box,
   Container,
   Grid
 } from '@material-ui/core';
-import Budget from 'src/components/dashboard//Budget';
 import Clock from 'src/components/dashboard//Clock';
 import UTCClock from 'src/components/dashboard//UTCClock'
-import LatestOrders from 'src/components/dashboard//LatestOrders';
 import LatestAttacks from "../components/dashboard/LatestAttacks";
-import LatestProducts from 'src/components/dashboard//LatestProducts';
-import Sales from 'src/components/dashboard//Sales';
 import TasksProgress from 'src/components/dashboard//TasksProgress';
-import TotalCustomers from 'src/components/dashboard//TotalCustomers';
-import TotalProfit from 'src/components/dashboard//TotalProfit';
 import TotalAttack from "../components/dashboard/TotalAttack";
 import ListofTTPs from "../components/dashboard/ListofTTPs";
 import TrafficByIP from 'src/components/dashboard//TrafficByIP';

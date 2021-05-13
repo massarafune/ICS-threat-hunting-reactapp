@@ -5,13 +5,9 @@ import {
     CardContent,
     CardHeader,
     Divider,
-    Typography,
     colors,
     useTheme
 } from '@material-ui/core';
-import LaptopMacIcon from '@material-ui/icons/LaptopMac';
-import PhoneIcon from '@material-ui/icons/Phone';
-import TabletIcon from '@material-ui/icons/Tablet';
 
 const TrafficByIP = (props) => {
     const theme = useTheme();
@@ -82,35 +78,6 @@ const TrafficByIP = (props) => {
                         pt: 2
                     }}
                 >
-                    {/*{devices.map(({*/}
-                    {/*                  color,*/}
-                    {/*                  icon: Icon,*/}
-                    {/*                  title,*/}
-                    {/*                  value*/}
-                    {/*              }) => (*/}
-                    {/*    <Box*/}
-                    {/*        key={title}*/}
-                    {/*        sx={{*/}
-                    {/*            p: 1,*/}
-                    {/*            textAlign: 'center'*/}
-                    {/*        }}*/}
-                    {/*    >*/}
-                    {/*        <Icon color="action" />*/}
-                    {/*        <Typography*/}
-                    {/*            color="textPrimary"*/}
-                    {/*            variant="body1"*/}
-                    {/*        >*/}
-                    {/*            {title}*/}
-                    {/*        </Typography>*/}
-                    {/*        <Typography*/}
-                    {/*            style={{ color }}*/}
-                    {/*            variant="h2"*/}
-                    {/*        >*/}
-                    {/*            {value}*/}
-                    {/*            %*/}
-                    {/*        </Typography>*/}
-                    {/*    </Box>*/}
-                    {/*))}*/}
                 </Box>
             </CardContent>
         </Card>

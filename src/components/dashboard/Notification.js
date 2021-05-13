@@ -1,15 +1,10 @@
 import {
-    Box,
     IconButton,
-    Grid,
-    Typography,
     Snackbar
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import MoneyIcon from '@material-ui/icons/Money';
-import { indigo, red } from '@material-ui/core/colors';
 import mqtt from 'mqtt';
-import React, { useState, useEffect } from 'react';
+import React, {useState} from 'react';
 
 const options = {
     protocol: 'mqtts',

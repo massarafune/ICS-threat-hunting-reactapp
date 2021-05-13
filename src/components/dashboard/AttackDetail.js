@@ -1,27 +1,20 @@
 import {
     AppBar,
     Container,
-    Card,
     Grid,
-    Divider,
     IconButton,
     List,
     ListItem,
     ListSubheader,
-    ListItemIcon,
     ListItemText,
     Toolbar,
     Typography,
-    Paper, Avatar, Box, CardContent
 } from "@material-ui/core";
-import {ExpandLess, ExpandMore, Pages, StarBorder} from "@material-ui/icons";
 import CloseIcon from "@material-ui/icons/Close";
-import {forwardRef, useState} from "react";
+import {useState} from "react";
 import {makeStyles} from "@material-ui/styles";
 import TTPs from "./TTPs";
 import useElasticTTPsAPI from "../../modules/useElasticTTPsAPI";
-import {indigo} from "@material-ui/core/colors";
-import MoneyIcon from "@material-ui/icons/Money";
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -83,13 +76,10 @@ return (
                 <ListItem button onClick={handleClick}>
 
                     <ListItemText primary="Tactics" secondary={props.attack.Tactics}/>
-                    {/*{open ? <ExpandLess /> : <ExpandMore />}*/}
                 </ListItem>
-                {/*<Collapse in={open} timeout="auto" unmountOnExit>*/}
                         <ListItem button>
                             <ListItemText primary="Techniques" secondary={props.attack.Technique} />
                         </ListItem>
-                {/*</Collapse>*/}
             </List>
             <Container maxWidth={false}>
                 <Grid

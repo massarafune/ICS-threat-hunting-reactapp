@@ -1,18 +1,13 @@
-import { v4 as uuid } from 'uuid';
-import moment from 'moment';
 import {
     Box,
     Button,
     Card,
     CardHeader,
     Divider,
-    IconButton,
     List,
     ListItem,
-    ListItemAvatar,
     ListItemText
 } from '@material-ui/core';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 const products = [
@@ -52,26 +47,12 @@ const ListofTTPs = (props) => (
                     href={product.url}
                     target='_blank'
                 >
-                    {/*<ListItemAvatar>*/}
-                    {/*    <img*/}
-                    {/*        alt={product.name}*/}
-                    {/*        src={product.imageUrl}*/}
-                    {/*        style={{*/}
-                    {/*            height: 48,*/}
-                    {/*            width: 48*/}
-                    {/*        }}*/}
-                    {/*    />*/}
-                    {/*</ListItemAvatar>*/}
+
                     <ListItemText
                         primary={product.name}
                         secondary={product.tactics}
                     />
-                    {/*<IconButton*/}
-                    {/*    edge="end"*/}
-                    {/*    size="small"*/}
-                    {/*>*/}
-                    {/*    <MoreVertIcon />*/}
-                    {/*</IconButton>*/}
+
                 </ListItem>
             ))}
         </List>

@@ -1,14 +1,10 @@
 import {
-    Avatar,
     Box,
     Card,
     CardContent,
     Grid,
     Typography
 } from '@material-ui/core';
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-import MoneyIcon from '@material-ui/icons/Money';
-import { red } from '@material-ui/core/colors';
 import { useState, useEffect } from 'react';
 
 const UTCClock = (props) => {
@@ -16,9 +12,7 @@ const UTCClock = (props) => {
     const [time, setTime] = useState(now.toUTCString());
     const updateClock = () => {
         const now = new Date;
-        // const time = new Date().toISOString()
         const time = now.toUTCString();
-        // console.log(time)
         setTime(time);
     };
 

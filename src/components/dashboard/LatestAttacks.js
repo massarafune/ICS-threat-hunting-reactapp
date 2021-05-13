@@ -1,19 +1,11 @@
-import moment from 'moment';
-import { v4 as uuid } from 'uuid';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import {
-    AppBar,
     Box,
-    Button,
     Card,
     CardHeader,
     Chip,
     Dialog,
     Divider,
-    IconButton,
-    List,
-    ListItem,
-    ListItemText,
     Slide,
     Table,
     TableBody,
@@ -21,13 +13,7 @@ import {
     TableHead,
     TableRow,
     TablePagination,
-    TableSortLabel,
-    Typography,
-    Tooltip,
-    Toolbar
 } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import {forwardRef, useEffect, useState} from "react";
 import AttackDetail from './AttackDetail';
 import useLatestAttackAPI from "../../modules/useLatestAttackAPI";

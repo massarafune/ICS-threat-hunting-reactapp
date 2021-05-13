@@ -1,5 +1,4 @@
 import {
-    Avatar,
     Button,
     Box,
     Card,
@@ -7,11 +6,9 @@ import {
     Grid,
     Typography
 } from '@material-ui/core';
-import MoneyIcon from '@material-ui/icons/Money';
 import { indigo, red } from '@material-ui/core/colors';
-
-import { useState, useEffect } from 'react';
 import {makeStyles} from "@material-ui/styles";
+
 const useStyles = makeStyles(() => ({
     card: {
         backgroundColor: '#848484 !important'
@@ -23,6 +20,7 @@ const useStyles = makeStyles(() => ({
         marginTop: '40px !important'
     }
 }));
+
 const TTPs = (props) => {
     const classes = useStyles();
     return (
@@ -155,7 +153,6 @@ const TTPs = (props) => {
                     >
                         {props.ttp.external_references[1].description}
                     </Typography>
-
                 </Box>
                 <Button className={classes.link} variant="contained" color="primary" href={props.ttp.external_references[0].url} target="_blank" rel="noreferrer">
                     External source
