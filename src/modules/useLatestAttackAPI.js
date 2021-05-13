@@ -70,7 +70,7 @@ export default function useLatestAttackAPI(){
 
     useEffect(()=> {
         setLoading(true);
-        getLatestAttackAPI(tac,tech).then((list)=>{
+        getLatestAttackAPI().then((list)=>{
             let result = JSON.parse(list.data);
             setList(result);
             setLoading(false);
