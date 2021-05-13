@@ -17,7 +17,7 @@ client.subscribe('ics');
 
 const Notification = (props) => {
     const [mesg, setMesg] = useState('');
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     const handleOpen = () => {
         setOpen(!open);
