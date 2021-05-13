@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import textFieldClasses from "@material-ui/core/TextField/textFieldClasses";
 import {v4 as uuid} from "uuid";
 
-const host = 'http://localhost/';
+const host = 'http://localhost:9200/';
 const index = 'attack';
 
 const attacks = [
@@ -46,7 +46,7 @@ const attacks = [
 ];
 
 const getLatestAttackAPI = () => {
-    const url = `${host}${index}`
+    const url = `${host}${index}/_search`
     // return axios.get(url).then((res) => {
     //     return {
     //      'id': res.data.id,
