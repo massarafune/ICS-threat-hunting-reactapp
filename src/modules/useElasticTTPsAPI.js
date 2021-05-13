@@ -1,6 +1,5 @@
 import axios from "axios";
 import {useEffect, useState} from "react";
-import textFieldClasses from "@material-ui/core/TextField/textFieldClasses";
 
 const host = 'http://localhost:9200/';
 const index = 'mitre';
@@ -67,15 +66,16 @@ const getElasticTTPsAPI = (tactics, technique) => {
     if (tech === 'err') {
         throw new Error('Invalid Query Parameter')
     }
-    // else {
-    //     return axios.get(url).then((res) => {
-    //         return res.hits
-    //     })
-    // }
     else {
-        console.log(ModifyParameter)
-        return ModifyParameter
+        return axios.get(url).then((res) => {
+            console.log(res);
+            return res.hits
+        })
     }
+    // else {
+    //     console.log(ModifyParameter)
+    //     return ModifyParameter
+    // }
 }
 
 export default function useElasticTTPsAPI(tac, tech){
@@ -85,13 +85,13 @@ export default function useElasticTTPsAPI(tac, tech){
 
     useEffect(()=> {
         setLoading(true);
-        // getElasticTTPsAPI(tac,tech).then((list)=>{
-        //     let result = JSON.parse(list.data);
-        //     setList(result);
-        //     setLoading(false);
-        // }).catch((e)=>setErr(e))
-        setLoading(false)
-        setList(getElasticTTPsAPI(tac,tech));
+        getElasticTTPsAPI(tac,tech).then((list)=>{
+            let result = JSON.parse(list.data);
+            setList(result);
+            setLoading(false);
+        }).catch((e)=>setErr(e))
+        // setLoading(false)
+        // setList(getElasticTTPsAPI(tac,tech));
     },[]);
     return {
         list,

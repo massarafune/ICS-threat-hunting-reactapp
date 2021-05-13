@@ -6,7 +6,6 @@ import {
   Toolbar
 } from '@material-ui/core';
 import Logo from './Logo';
-import Notification from '../components/dashboard/Notification';
 
 const DashboardNavbar = ({ onMobileNavOpen, ...rest }) => {
 
@@ -21,7 +20,6 @@ const DashboardNavbar = ({ onMobileNavOpen, ...rest }) => {
         </RouterLink>
         <Box sx={{ flexGrow: 1 }} />
       </Toolbar>
-      <Notification />
     </AppBar>
   );
 };

@@ -39,7 +39,8 @@ const Notification = (props) => {
             open={open}
             autoHideDuration={5000}
             onClose={handleOpen}
-            message='Attack Detected'
+            message='Attack Detected: Click to reload the table'
+            onClick={()=>window.location.reload(false)}
             action={
                 <React.Fragment>
                     <IconButton size="small" aria-label="close" color="inherit" onClick={handleOpen}>

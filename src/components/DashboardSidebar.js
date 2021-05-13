@@ -12,6 +12,7 @@ import {
   BarChart as BarChartIcon,
 } from 'react-feather';
 import NavItem from './NavItem';
+import Notification from '../components/dashboard/Notification';
 
 const items = [
   {
@@ -52,7 +53,6 @@ const DashboardSidebar = ({ onMobileClose, openMobile }) => {
         </List>
       </Box>
       <Box sx={{ flexGrow: 1 }} />
-
     </Box>
   );
 
@@ -73,7 +73,8 @@ const DashboardSidebar = ({ onMobileClose, openMobile }) => {
           {content}
         </Drawer>
       </Hidden>
-      <Hidden lgDown>
+        <Notification />
+        <Hidden lgDown>
         <Drawer
           anchor="left"
           open
