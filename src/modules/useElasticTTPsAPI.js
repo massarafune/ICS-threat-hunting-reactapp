@@ -61,11 +61,11 @@ const ModifyParameter = {
 
 const getElasticTTPsAPI = (tactics, technique) => {
     console.log(tactics)
-    const tac = tactics[tactics] ? tactics[tactics] : 'err'
+    const tac = tactics ? tactics : 'err'
     const tech = technique.replace(/ /, '+')
     const url = `${host}${index}/_search?q=kill_chain_phases.phase_name:${tac}+AND+name:${tech}`
     console.log(url);
-    if (tech === 'err') {
+    if (tac === 'err') {
         throw new Error('Invalid Query Parameter')
     }
     else {
