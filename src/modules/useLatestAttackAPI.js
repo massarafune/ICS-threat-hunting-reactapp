@@ -51,7 +51,7 @@ const getLatestAttackAPI = () => {
     console.log(url)
     return axios.get(url).then((res) => {
         console.log(res);
-        const attack = res.hits.hits
+        const attack = res.data.hits.hits
         console.log(attack);
 
         // return {
