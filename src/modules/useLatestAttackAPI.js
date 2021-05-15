@@ -50,6 +50,7 @@ const getLatestAttackAPI = () => {
     const url = `${host}${index}/_search`
     console.log(url)
     return axios.get(url).then((res) => {
+        console.log(res);
         const attack = res.hits.hits
         console.log(attack);
 
@@ -76,6 +77,7 @@ export default function useLatestAttackAPI(){
     useEffect(()=> {
         setLoading(true);
         getLatestAttackAPI().then((list)=>{
+            console.log(list)
             let result = JSON.parse(list.data);
             setList(result);
             setLoading(false);
