@@ -82,11 +82,11 @@ const LatestAttacks = (props) => {
                                 list.map((attack) => (
                                 <TableRow
                                     hover
-                                    key={attack._source.timestamp}
+                                    key={attack._source.TimeStamp}
                                     onClick={()=>{handleClickOpen(attack)}}
                                 >
                                     <TableCell>
-                                        {attack._source.timestamp}
+                                        {attack._source.TimeStamp}
                                     </TableCell>
                                     <TableCell>
                                         {attack._source.SrcIP}
