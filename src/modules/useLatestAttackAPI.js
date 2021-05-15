@@ -48,9 +48,10 @@ const attacks = [
 
 const getLatestAttackAPI = () => {
     const url = `${host}${index}/_search`
+    console.log(url)
     return axios.get(url).then((res) => {
         const attack = res.hits.hits
-        console.log(res);
+        console.log(attack);
 
         // return {
         //  'id': attack.id,
