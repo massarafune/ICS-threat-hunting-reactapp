@@ -48,6 +48,7 @@ const LatestAttacks = (props) => {
     };
 
     useEffect(()=>{
+        console.log(list);
         setNumber(list.length)
         props.srcIP(list.map((attack)=>attack.SrcIP))
         console.log(list.map((attack)=>attack.SrcIP))

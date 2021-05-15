@@ -63,6 +63,7 @@ const getElasticTTPsAPI = (tactics, technique) => {
     const tac = tactics[tactics] ? tactics[tactics] : 'err'
     const tech = technique.replace(/ /, '+')
     const url = `${host}${index}/_search?q=kill_chain_phases.phase_name:${tac}+AND+name:${tech}`
+    console.log(url);
     if (tech === 'err') {
         throw new Error('Invalid Query Parameter')
     }
@@ -87,6 +88,7 @@ export default function useElasticTTPsAPI(tac, tech){
         setLoading(true);
         getElasticTTPsAPI(tac,tech).then((list)=>{
             let result = JSON.parse(list.data);
+            console.log(result);
             setList(result);
             setLoading(false);
         }).catch((e)=>setErr(e))
