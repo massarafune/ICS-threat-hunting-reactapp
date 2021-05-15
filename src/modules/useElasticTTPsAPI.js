@@ -71,7 +71,7 @@ const getElasticTTPsAPI = (tactics, technique) => {
     else {
         return axios.get(url).then((res) => {
             console.log(res);
-            return res.data.hits
+            return res.data.hits.hits[0]
         })
     }
     // else {
