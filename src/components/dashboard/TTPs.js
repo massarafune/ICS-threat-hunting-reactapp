@@ -41,13 +41,13 @@ const TTPs = (props) => {
                             gutterBottom
                             variant="h6"
                         >
-                            MITRE ATT&CK Technique ID: {props.ttp.external_references[0].external_id}
+                            MITRE ATT&CK Technique ID: {props.ttp._source.external_references[0].external_id}
                         </Typography>
                         <Typography
                             color="textPrimary"
                             variant="h3"
                         >
-                            {props.ttp.name}
+                            {props.ttp._source.name}
                         </Typography>
                     </Grid>
                 </Grid>
@@ -74,7 +74,7 @@ const TTPs = (props) => {
                         }}
                         variant="body2"
                     >
-                        {props.ttp.description}
+                        {props.ttp._source.description}
                     </Typography>
                 </Box>
                 <Box
@@ -93,7 +93,7 @@ const TTPs = (props) => {
                     >
                         Data Sources
                     </Typography>
-                    {props.ttp.x_mitre_data_sources.map((source)=>(
+                    {props.ttp._source.x_mitre_data_sources.map((source)=>(
                     <Typography
                         sx={{
                             color: indigo[900],
@@ -123,7 +123,7 @@ const TTPs = (props) => {
                     >
                         Platforms
                     </Typography>
-                    {props.ttp.x_mitre_platforms.map((platform)=>(
+                    {props.ttp._source.x_mitre_platforms.map((platform)=>(
                             <Typography
                                 sx={{
                                     color: indigo[900],
@@ -151,10 +151,10 @@ const TTPs = (props) => {
                         color="textSecondary"
                         variant="caption"
                     >
-                        {props.ttp.external_references[1].description}
+                        {props.ttp._source.external_references[1].description}
                     </Typography>
                 </Box>
-                <Button className={classes.link} variant="contained" color="primary" href={props.ttp.external_references[0].url} target="_blank" rel="noreferrer">
+                <Button className={classes.link} variant="contained" color="primary" href={props.ttp._source.external_references[0].url} target="_blank" rel="noreferrer">
                     External source
                 </Button>
             </CardContent>
