@@ -87,9 +87,9 @@ export default function useElasticTTPsAPI(tac, tech){
     useEffect(()=> {
         setLoading(true);
         getElasticTTPsAPI(tac,tech).then((list)=>{
-            let result = JSON.parse(list.data);
-            console.log(result);
-            setList(result);
+            // let result = JSON.parse(list.data);
+            console.log(list);
+            setList(list);
             setLoading(false);
         }).catch((e)=>setErr(e))
         // setLoading(false)

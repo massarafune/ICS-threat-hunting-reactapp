@@ -83,7 +83,7 @@ const LatestAttacks = (props) => {
                                 <TableRow
                                     hover
                                     key={attack._source.TimeStamp}
-                                    onClick={()=>{handleClickOpen(attack)}}
+                                    onClick={()=>{handleClickOpen(attack._source)}}
                                 >
                                     <TableCell>
                                         {attack._source.TimeStamp}
