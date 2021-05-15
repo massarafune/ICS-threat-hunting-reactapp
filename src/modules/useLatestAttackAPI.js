@@ -78,8 +78,8 @@ export default function useLatestAttackAPI(){
         setLoading(true);
         getLatestAttackAPI().then((list)=>{
             console.log(list)
-            let result = JSON.parse(list.data);
-            setList(result);
+            // let result = JSON.parse(list.data);
+            setList(list);
             setLoading(false);
         }).catch((e)=>setErr(e))
         // setLoading(false)

@@ -50,8 +50,8 @@ const LatestAttacks = (props) => {
     useEffect(()=>{
         console.log(list);
         setNumber(list.length)
-        props.srcIP(list.map((attack)=>attack.SrcIP))
-        console.log(list.map((attack)=>attack.SrcIP))
+        props.srcIP(list.map((attack)=>attack._source.SrcIP))
+        console.log(list.map((attack)=>attack._source.SrcIP))
     },[list])
 
     return (
@@ -82,22 +82,22 @@ const LatestAttacks = (props) => {
                                 list.map((attack) => (
                                 <TableRow
                                     hover
-                                    key={attack.timestamp}
+                                    key={attack._source.timestamp}
                                     onClick={()=>{handleClickOpen(attack)}}
                                 >
                                     <TableCell>
-                                        {attack.timestamp}
+                                        {attack._source.timestamp}
                                     </TableCell>
                                     <TableCell>
-                                        {attack.SrcIP}
+                                        {attack._source.SrcIP}
                                     </TableCell>
                                     <TableCell>
-                                        {attack.DestIP}
+                                        {attack._source.DestIP}
                                     </TableCell>
                                     <TableCell>
                                         <Chip
                                             color="primary"
-                                            label={attack.Tactics}
+                                            label={attack._source.Tactics}
                                             size="small"
                                         />
                                     </TableCell>
