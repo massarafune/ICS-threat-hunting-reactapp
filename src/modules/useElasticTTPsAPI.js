@@ -60,6 +60,7 @@ const ModifyParameter = {
 }
 
 const getElasticTTPsAPI = (tactics, technique) => {
+    console.log(tactics)
     const tac = tactics[tactics] ? tactics[tactics] : 'err'
     const tech = technique.replace(/ /, '+')
     const url = `${host}${index}/_search?q=kill_chain_phases.phase_name:${tac}+AND+name:${tech}`
@@ -70,7 +71,7 @@ const getElasticTTPsAPI = (tactics, technique) => {
     else {
         return axios.get(url).then((res) => {
             console.log(res);
-            return res.hits
+            return res.data.hits
         })
     }
     // else {
