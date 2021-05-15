@@ -49,15 +49,19 @@ const attacks = [
 const getLatestAttackAPI = () => {
     const url = `${host}${index}/_search`
     return axios.get(url).then((res) => {
-        return {
-         'id': res.data.id,
-         'timestamp': res.data.timestamp,
-         'SrcIP': res.data.srcIP,
-         'DestIP': res.data.destIP,
-         'Tactics': res.data.tactics,
-         'Technique': res.data.technique,
-         'log': res.data.filename
-        };
+        const attack = res.data.hits.hits._source
+        console.log(attack);
+
+        // return {
+        //  'id': attack.id,
+        //  'timestamp': res.data.timestamp,
+        //  'SrcIP': res.data.srcIP,
+        //  'DestIP': res.data.destIP,
+        //  'Tactics': res.data.tactics,
+        //  'Technique': res.data.technique,
+        //  'log': res.data.filename
+        // };
+        return attack;
     })
     // return attacks;
 }

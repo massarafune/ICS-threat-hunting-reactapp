@@ -81,7 +81,7 @@ const LatestAttacks = (props) => {
                                 list.map((attack) => (
                                 <TableRow
                                     hover
-                                    key={attack.id}
+                                    key={attack.timestamp}
                                     onClick={()=>{handleClickOpen(attack)}}
                                 >
                                     <TableCell>
