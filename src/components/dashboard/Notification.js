@@ -11,7 +11,7 @@ const options = {
     clientId: 'sid'
 };
 
-const client = mqtt.connect('mqtt://test.monsquitto.org:8081');
+const client = mqtt.connect('mqtt://test.mosquitto.org:8081');
 
 client.subscribe('ics');
 
