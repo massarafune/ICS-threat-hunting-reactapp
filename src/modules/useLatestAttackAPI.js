@@ -49,7 +49,7 @@ const attacks = [
 const getLatestAttackAPI = () => {
     const url = `${host}${index}/_search`
     return axios.get(url).then((res) => {
-        const attack = res.hits.hits._source
+        const attack = res.hits.hits
         console.log(res);
 
         // return {
