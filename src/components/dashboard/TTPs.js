@@ -144,6 +144,7 @@ const TTPs = (props) => {
                         alignItems: 'center'
                     }}
                 >
+                    {props.ttp._source.external_references[1] &&
                     <Typography
                         sx={{
                             mr: 1
@@ -153,6 +154,8 @@ const TTPs = (props) => {
                     >
                         {props.ttp._source.external_references[1].description}
                     </Typography>
+                    }
+
                 </Box>
                 <Button className={classes.link} variant="contained" color="primary" href={props.ttp._source.external_references[0].url} target="_blank" rel="noreferrer">
                     External source
