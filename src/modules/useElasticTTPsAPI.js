@@ -62,7 +62,7 @@ const ModifyParameter = {
 const getElasticTTPsAPI = (tactics, technique) => {
     console.log(tactics)
     const tac = tactics ? tactics : 'err'
-    const tech = technique.replaceAll(/ /, '+')
+    const tech = technique.replaceAll(' ', '+')
     const url = `${host}${index}/_search?q=kill_chain_phases.phase_name:${tac}+AND+name:${tech}`
     console.log(url);
     if (tac === 'err') {
