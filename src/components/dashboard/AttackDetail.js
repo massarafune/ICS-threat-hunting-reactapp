@@ -67,7 +67,7 @@ return (
             >
                 <ListItem button>
 
-                    <ListItemText primary="Observed At" secondary={props.attack.timestamp}/>
+                    <ListItemText primary="Observed At" secondary={props.attack.TimeStamp}/>
                 </ListItem>
                 <ListItem button>
 
