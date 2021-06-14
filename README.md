@@ -2,11 +2,24 @@
 ## Run the application
 ```bash
 git clone https://github.com/massarafune/ICS-threat-hunting-reactapp.git
+cd ICS-threat-hunting-reactapp
 npm install
 npm run build
 ```
 Once you build the application you can set up your favourite web server  
 The following section describes the flow in case you choose Apache
+
+## Other dependencies
+This application is designed to work with some other projects:  
+- https://github.com/massarafune/ics-threat-intel (Server configurations)
+- https://github.com/mistersiddd/signature-detection-pcap (Python script to detect attack signatures)
+
+```bash
+cd ../
+git clone https://github.com/mistersiddd/signature-detection-pcap.git
+git clone https://github.com/massarafune/ics-threat-intel.git
+```
+
 ## Apache configuration for React-router
 ```sh
 sudo vi /etc/apache2/sites-enabled/000-default.conf
