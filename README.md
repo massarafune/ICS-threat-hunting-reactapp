@@ -7,7 +7,7 @@ npm install
 npm run build
 ```
 Once you build the application you can set up your favourite web server  
-The following section describes the flow in case you choose Apache
+The following section describes the setup flow in case you choose Apache
 
 ## Other dependencies
 This application is designed to work with some other projects:  
@@ -17,7 +17,6 @@ This application is designed to work with some other projects:
 ```bash
 cd ../
 git clone https://github.com/mistersiddd/signature-detection-pcap.git
-git clone https://github.com/massarafune/ics-threat-intel.git
 ```
 
 ## Apache configuration for React-router
@@ -40,3 +39,6 @@ sudo a2enmod rewrite
 sudo systemctl restart apache2
 ```
 React-router should work as expected
+
+## ELK configuration
+Please refer to the other repository: [https://github.com/massarafune/ics-threat-intel](https://github.com/massarafune/ics-threat-intel)
